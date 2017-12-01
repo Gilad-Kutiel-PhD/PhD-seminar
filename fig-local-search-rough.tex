@@ -1,0 +1,51 @@
+\begin{tikzpicture}[very thick, every node/.append style={draw=none, font=\Large}]
+\foreach[count=\i] \x/\y in {%
+0/0, 1/2, 2/1, 1.5/-.5%
+}{
+\node[red](\i) at(\x,\y){\faStar};
+}
+
+
+\foreach \i/\j in {%
+1/2,2/3, 3/4%
+}{
+\draw[green,-] (\i) -- (\j);
+}
+
+\draw[blue, dashed, -]
+(1.south)
+to[out=180, in=180] (2.north)
+to[out=0, in=90] (3.east)
+to[out=-90, in=45] (4.south east)
+to[out=215, in=0] (1.south)
+;
+
+\foreach[count=\i] \l in {%
+1cm, 0, -1cm% 
+}{
+\node[below left=1cm and \l of 1](bl\i) {};
+\draw[green,-] (1) -- (bl\i);
+}
+
+\foreach[count=\i] \l in {%
+1cm, -1cm% 
+}{
+\node[above left=1cm and \l of 2](bl\i) {};
+\draw[green,-] (2) -- (bl\i);
+}
+
+\foreach[count=\i] \l in {%
+1cm, -1cm% 
+}{
+\node[above right=\l and 1cm of 3](bl\i) {};
+\draw[green,-] (3) -- (bl\i);
+}
+
+\foreach[count=\i] \l in {%
+1cm, 0% 
+}{
+\node[below right=\l and 1cm of 4](bl\i) {};
+\draw[green,-] (4) -- (bl\i);
+}
+
+\end{tikzpicture}

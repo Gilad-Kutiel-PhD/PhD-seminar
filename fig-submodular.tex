@@ -1,0 +1,128 @@
+\begin{tikzpicture}[
+every node/.append style={
+	draw=none,
+	blue, 
+	font=\Large
+}
+, y=1.45cm
+, x=1.5cm
+, very thick
+]
+
+\def\group#1#2#3{
+\draw[#3, -, name path=#1#2]
+(#1.west)
+to[out=90,in=90] (#2.east)
+to[out=-90,in=-90] (#1.west)
+;
+}
+
+\onslide<+->
+% GROUP 1 
+\node(11) at(0,1){\faFemale};
+\node(12) at(1,1){\faFemale};
+\node(13) at(2,1){\faFemale};
+
+\begin{scope}[every node/.append style={brown}]
+\node(14) at(0,0){\faFemale};
+\node(15) at(1,0){\faFemale};
+\node(16) at(2,0){\faFemale};
+\end{scope}
+
+\group{14}{15}{purple}
+\group{15}{16}{cyan}
+
+\draw[green] (11) -- (14);
+\draw (12) -- (15);
+\draw[orange] (13) -- (16);
+
+% GROUP 2 
+\begin{scope}[yshift=-4cm]
+\node(21) at(0,1){\faFemale};
+\node(22) at(1,1){\faFemale};
+\node(23) at(2,1){\faFemale};
+\node(24) at(0,0){\faFemale};
+
+\begin{scope}[every node/.append style={brown}]
+\node(25) at(1,0){\faFemale};
+\end{scope}
+
+\node(26) at(2,0){\faFemale};
+\end{scope}
+
+\group{24}{25}{purple,dotted,thin}
+\group{25}{26}{cyan,dotted,thin}
+
+\draw[cyan,-, name intersections={of=2425 and 2526}]
+(intersection-1)
+to [out=210,in=150,looseness=1.40] (intersection-2)
+;
+
+\draw[purple,-, name intersections={of=2425 and 2526}]
+(intersection-1)
+to [out=-30,in=30,looseness=1.40] (intersection-2)
+;
+
+\draw[] (21) -- (25);
+\draw[orange] (24) -- (25);
+\draw[green] (26) -- (25);
+
+% LABELS
+\begin{scope}[every node/.style={black, rectangle}]
+\node[above=0 of 12]{$F(A \cup B)$};
+\node[below=5mm of 25]{$F(A \cap B)$};
+\end{scope}
+
+
+\onslide<+->
+% GROUP 3 
+\begin{scope}[xshift=7cm]
+\node(41) at(0,1){\faFemale};
+\node(42) at(1,1){\faFemale};
+\node(43) at(2,1){\faFemale};
+
+\begin{scope}[every node/.append style={brown}]
+\node(44) at(0,0){\faFemale};
+\node(45) at(1,0){\faFemale};
+\end{scope}
+
+\node(46) at(2,0){\faFemale};
+\end{scope}
+
+\group{44}{45}{purple}
+
+% GROUP 4 
+\begin{scope}[xshift=7cm, yshift=-4cm]
+\node(31) at(0,1){\faFemale};
+\node(32) at(1,1){\faFemale};
+\node(33) at(2,1){\faFemale};
+
+\node(34) at(0,0){\faFemale};
+
+\begin{scope}[every node/.append style={brown}]
+\node(35) at(1,0){\faFemale};
+\node(36) at(2,0){\faFemale};
+\end{scope}
+
+\end{scope}
+
+\group{35}{36}{cyan}
+
+% LABELS
+\begin{scope}[every node/.style={black, rectangle}]
+\node[above=0 of 42]{$F(A)$};
+\node[below=5mm of 35]{$F(B)$};
+\end{scope}
+
+% ARCS
+\onslide<+->
+\draw[green] (41) -- (44);
+\draw[green] (46) -- (45);
+\onslide<+->
+\draw[orange] (34) -- (35);
+\draw[orange] (33) -- (36);
+\onslide<+->
+\draw (42) -- (45);
+\draw (31) -- (35);
+
+\end{tikzpicture}

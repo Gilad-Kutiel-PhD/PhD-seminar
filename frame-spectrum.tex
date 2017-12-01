@@ -1,0 +1,17 @@
+\begin{frame}{Many Variants}
+\def\pointer{callout absolute pointer}
+\vfill
+\begin{center}
+\begin{tikzpicture}[every node/.style={note=orange!50}, x=16mm]
+\draw (0,0) -- (6,0);
+\node[\pointer={(0,0)}] at(0, 1) {MSF};
+\node[\pointer={(1,0)}] at(1, -1) {Node weighted MSF};
+\node[\pointer={(2,0)}] at(2, 1) {Edge weighted MSF};
+\node[\pointer={(3,0)}] at(3, -2) {Unweighted, O(1) capacity MCM};
+\node[\pointer={(4,0)}] at(4, 2) {Unweighted MCM};
+\node[\pointer={(5,0)}] at(5, -1) {MCM};
+\node[\pointer={(6,0)}] at(6, 1) {Group MCM};
+\end{tikzpicture}
+\end{center}
+\vfill
+\end{frame}

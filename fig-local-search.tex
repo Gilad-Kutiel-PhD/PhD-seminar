@@ -1,0 +1,76 @@
+\begin{tikzpicture}[
+every node/.append style={draw=none, font=\Large}
+, y=0.8cm
+, -
+, very thick
+]
+
+\onslide<+->
+% STARS
+\foreach[count=\i] \x/\y in {%
+0/0, 2/1, 1/2, 4/-1, 5/2, 7/0, 3/4, 4/5, 7/5, 8/3%
+}{
+\node[red](\i) at(\x,\y) {\faStar};
+}
+
+\foreach \i/\j in {%
+1/2, 2/3, 3/7, 7/8, 2/4, 4/5, 5/6, 4/6, 9/10, 5/7%
+}{
+\draw[green] (\i) -- (\j) coordinate[midway](\i\j);
+}
+
+\onslide<+->
+% COMPONENTS
+\draw[blue, dashed, thick] 
+(1.west) 
+to[out=90,in=180] coordinate[midway] (c1) (3.north)
+to[out=0, in=90] (2.east)
+to[out=270, in=270] (1.west)
+;
+
+\draw[blue, dashed, thick] 
+(7.west) 
+to[out=90,in=180] coordinate[midway] (c2) (8.north)
+to[out=0, in=90] (8.east)
+to[out=-90, in=0] (7.south)
+to[out=180, in=-90] (7.west)
+;
+
+\draw[blue, dashed, thick] 
+(4.west) 
+to[out=90,in=180] (5.north)
+to[out=0, in=90] (6.east)
+to[out=270, in=270] coordinate[pos=.3] (c3) (4.west)
+;
+
+\draw[blue, dashed, thick] 
+(10.south) 
+to[out=180,in=180] (9.north)
+to[out=0, in=0] coordinate[midway] (c4) (10.south)
+;
+
+\onslide<+>
+% LOCAL OPTIMAL
+\begin{scope}[every node/.style={note=orange!50, font=\small}]
+\def\pointer{callout absolute pointer}
+
+\node[\pointer={(c1)}, above left=4mm and -3mm of c1] 
+{Local Optimal};
+
+\node[\pointer={(c2)}, above left=3mm and 0 of c2] 
+{Local Optimal};
+
+\node[\pointer={(c3)}, below right=7mm and -3mm of c3] 
+{Local Optimal};
+
+\node[\pointer={(c4)}, above right=8mm and -5mm of c4] 
+{Local Optimal};
+
+\onslide<+->
+% EDGE TYPES
+\node[\pointer={(24)}, below left=8mm and 1mm of 24] {Bad};
+\node[\pointer={(46)}, below right=8mm and 1mm of 46] {Good};
+
+\end{scope}
+
+\end{tikzpicture}
