@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+\onslide<3->{
+\foreach \i in {0,...,3}{
+	\node(c\i) at(0, -\i){$C_{\i}$};
+}
+\begin{scope}[y=2cm]
+\foreach \i in {0,...,2}{
+	\node(t\i) at(2, -\i){$x^T_{\i}$};
+	\node(f\i)[above=4mm of t\i]{$x^F_{\i}$};
+	\node(\i)[above right=2mm and 15mm of t\i]{$x_{\i}$};
+	\draw[] (t\i) -- (\i);
+	\draw[] (f\i) -- (\i);
+}
+
+\foreach \u \v in {
+	c3/f2%
+	,c2/t2,c2/f1%
+	,c1/t1,c1/t0,c1/t2%
+	,c0/t1,c0/t0%
+}{
+	\draw[] (\u) -- (\v);
+}
+\end{scope}
+}
+
+\onslide<4->{
+\begin{scope}[xshift=6cm]
+\foreach \i in {0,...,3}{
+	\node(c\i) at(0, -\i){$C_{\i}$};
+}
+
+\begin{scope}[y=2cm]
+\foreach \i in {0,...,2}{
+	\node(t\i) at(2, -\i){$x^T_{\i}$};
+	\node(f\i)[above=4mm of t\i]{$x^F_{\i}$};
+	\node(\i)[above right=2mm and 15mm of t\i]{$x_{\i}$};
+}
+
+\foreach \u \v in {
+	t2/2%
+	,t1/1%
+	,f0/0%
+}{
+	\draw[] (\u) -- (\v);
+}
+
+\foreach \u \v in {
+	c3/f2%
+	,c2/f1%
+	,c1/t0%
+	,c0/t0%
+}{
+	\draw[] (\u) -- (\v);
+}
+\end{scope}
+}
+
+\end{scope}
+
+\end{tikzpicture}

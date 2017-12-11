@@ -21,14 +21,14 @@
 	1/2%
 	,4/5%
 }{
-	\draw[on=<6->{blue}] (\u) to[bend left] (\v);
+	\draw[on=<7->{blue}] (\u) to[bend left] (\v);
 }
 
 \foreach \u \v in {
 	2/4%
 	,3/4%
 }{
-	\draw[on=<6->{green}] (\u) to[bend left] (\v);
+	\draw[on=<7->{green}] (\u) to[bend left] (\v);
 }
 
 \foreach \u \v in {
@@ -47,8 +47,8 @@
 	\draw[on=<4->{blur}] (\u) to[bend left] (\v);
 }
 
-\begin{scope}[xshift=7cm, yshift=-3cm]
-\onslide<2->{
+\begin{scope}[xshift=6cm, yshift=-3cm, x=15mm]
+\onslide<2-4>{
 \foreach[count=\i] \c in {1,2,3,2,1}{
 	\node[col\i](l\i) at(0,\i){1};
 	\node[col\i](r\i) at(2,\i){\c};

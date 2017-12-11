@@ -43,16 +43,6 @@
 	label above/.style={edge label, above=1mm},
 }
 
-\tikzset{default node/.style={
-	draw, 
-	circle,
-	inner sep=0mm,
-	minimum size=5mm,
-	very thick,
-	font=\small,
-	black!70,
-}}
-
 \tikzset{
 	hide/.style={
 		opacity=0
@@ -75,14 +65,25 @@
 }
 
 \tikzset{
-	>=latex
-	,->
-	,every node/.style={default node}
-	,very thick
-}
-
-\tikzset{
 	blur/.style={
 		opacity=.1
 	}
+}
+
+% DEFAULTS
+\tikzset{default node/.style={
+	draw, 
+	circle,
+	inner sep=0mm,
+	minimum size=5mm,
+	very thick,
+	font=\small,
+	black!70,
+}}
+
+\tikzset{
+	->
+	,>=latex
+	,every node/.style={default node}
+	,every picture/.append style={very thick}
 }
