@@ -15,7 +15,13 @@
 }
 
 \tikzset{
-	note/.style={rectangle callout, fill=#1}
+	note/.style={
+		rectangle callout
+		,fill=#1
+		,thin
+		,inner sep=1mm
+	}
+	,noteorange/.style={note=orange!50}
 }
 
 \tikzset{
@@ -69,9 +75,10 @@
 }
 
 \tikzset{
-	>=latex,
-	->,
-	every node/.style={default node},
+	>=latex
+	,->
+	,every node/.style={default node}
+	,very thick
 }
 
 \tikzset{

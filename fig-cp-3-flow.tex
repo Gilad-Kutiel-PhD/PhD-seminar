@@ -1,32 +1,40 @@
+\tikzset{
+	col1/.style={orange}
+	,col2/.style={blue}
+	,col3/.style={red}
+	,col4/.style={brown}
+	,col5/.style={green}
+}
+
 \begin{tikzpicture}[very thick]
-\foreach[count=\i] \x \y in {
-	0/0
-	,1/2
-	,2/-1
-	,3/1
-	,4/-2
+\foreach[count=\i] \x \y \c in {
+	0/0/1
+	,1/2/2
+	,2/-1/3
+	,3/1/2
+	,4/-2/1
 }{
-	\node(\i) at(\x,\y){\i};
+	\node[col\i, on=<5->{black}](\i) at(\x,\y){{\onslide<-4>{\c}}};
 }
 
 \foreach \u \v in {
 	1/2%
 	,4/5%
 }{
-	\draw[on=<5->{blue}] (\u) to[bend left] (\v);
+	\draw[on=<6->{blue}] (\u) to[bend left] (\v);
 }
 
 \foreach \u \v in {
 	2/4%
 	,3/4%
 }{
-	\draw[on=<5->{green}] (\u) to[bend left] (\v);
+	\draw[on=<6->{green}] (\u) to[bend left] (\v);
 }
 
 \foreach \u \v in {
 	5/3%
 }{
-	\draw[on=<5->{orange}] (\u) to[bend left] (\v);
+	\draw[on=<6->{orange}] (\u) to[bend left] (\v);
 }
 
 
@@ -41,9 +49,9 @@
 
 \begin{scope}[xshift=7cm, yshift=-3cm]
 \onslide<2->{
-\foreach \i in {1,...,5}{
-	\node(l\i) at(0,\i){1};
-	\node(r\i) at(2,\i){\i};
+\foreach[count=\i] \c in {1,2,3,2,1}{
+	\node[col\i](l\i) at(0,\i){1};
+	\node[col\i](r\i) at(2,\i){\c};
 }
 
 \foreach \u \v in {
@@ -53,7 +61,7 @@
 	,4/5%
 	,5/3%
 }{
-	\draw[-] (l\u) -- (r\v);
+	\draw[] (l\u) -- (r\v);
 }
 
 \foreach \u \v in {
@@ -62,7 +70,7 @@
 	,3/1,3/5%
 	,4/2,4/3%
 }{
-	\draw[-, on=<3->{blur}] (l\u) -- (r\v);
+	\draw[on=<3->{blur}] (l\u) -- (r\v);
 }
 }
 \end{scope}
