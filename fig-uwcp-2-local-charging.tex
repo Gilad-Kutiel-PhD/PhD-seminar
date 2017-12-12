@@ -8,12 +8,12 @@
 \node[
 noteorange
 ,\pointer={(p1d1)} 
-] at(1,1) {Charge with 2 \faBtc};
+] at(1,1) {Load with 2 \faBtc};
 }
 
 \begin{scope}[xshift=3cm]
 \node(p2) at(0,0) {\faBtc};
-\node(d2) at(1,-1) {};
+\node(d2) at(1,-1) {?};
 \draw (p2) -- (d2) node[label, midway](p2d2){}; 
 
 \onslide<+->{
@@ -35,6 +35,18 @@ noteorange
 noteorange
 ,\pointer={(p3d3)} 
 ] at(-1,1) {Pay 1 \faBtc{} for incoming arc};
+}
+
+\onslide<+->{
+\node(p4) at(1,-2) {};
+\draw (p4) -- (d3) {}; 
+}
+
+\onslide<+->{
+\node[
+noteorange
+,\pointer={(d3.south)} 
+] at(0,-3) {Saturated driver};
 }
 
 \end{scope}
