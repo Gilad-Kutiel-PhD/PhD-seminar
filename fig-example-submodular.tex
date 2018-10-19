@@ -23,19 +23,21 @@
 	\node(\i) at(\x,\y){};
 }
 
+\filldraw[fill=blue!80!black] (6.west) arc(180:0:2.6mm) (6.west);
+\filldraw[fill=orange!80!black] (6.west) arc(180:360:2.6mm) (6.west);
+\filldraw[fill=blue!80!black] (9.west) arc(180:0:2.6mm) (9.west);
+\filldraw[fill=orange!80!black] (9.west) arc(180:360:2.6mm) (9.west);
+
 \foreach[] \x \y in {
 	2/1
 	,4/-3
-	,7/-1
-	,7/2
 }{
 	\node[fill=orange!80] at(\x,\y){};
 }
 
 \foreach[] \x \y in {
-	3/4
-	,7/2
-	,8/-2
+	7/2
+	,6/-3
 }{
 	\node[fill=blue!80] at(\x,\y){};
 }
