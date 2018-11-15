@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Thu Oct 18 16:21:57 IDT 2018
+#Thu Nov 15 08:32:44 IST 2018
 markTmpDer=true
 builderNum=2
 outputDir=out/
@@ -8,7 +8,7 @@ bibrefDir=
 outputFormat=pdf
 tempDir=tmp
 mainTexFile=main.tex
-outputFile=yahoo.pdf
+outputFile=amazon.pdf
 langSpell=en
 markDer=true
 srcDir=
