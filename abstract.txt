@@ -3,9 +3,10 @@ Speaker:          Gilad Kutiel
 Title:            Approximation Algorithms for the Maximum Carpool Matching and Submodular Maximization
 Supervisor:       Prof. R. Schawrtz and Dr. Dror Rawitz
 Abstract:
-Combinatorial Optimization is a topic that consists of finding an optimal object from a finite set of objects.
-NP-hard combinatorial optimization problems are problems that, despite huge effort over many years, no efficient algorithm that finds an optimal solution is known to them (and it is possible that none exists).
-Approximation algorithms are efficient algorithms that find approximate solutions to NP-hard optimization problems with provable guarantees.
-In this talk we will present and discuss approximation algorithms for the Maximum Carpool Matching problem and for Submodular Maximization, two NP-hard combinatorial optimization problems.
+In the Maximum Carpool Matching problem we seek for the best way a group of people can share their ride based on their personal preferences (music, smoking, etc...).
+Submodularity is a property of set functions. The problem of maximizing a submodular function appears in many applications such as viral marketing, information gathering, image segmentation, document summarization, and speeding up satisfiability solvers.
+Both the Maximum Carpool Matching and the Submodular Function Maximization problems are NP-hard, and thus, no efficient algorithm is known for them.
+
+In this talk we will present an approximation algorithm for Submodular Maximization and will show how Submodular Maximization can be used to design an approximation algorithm for the Maximum Carpool Matching problem
 
 
