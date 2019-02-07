@@ -13,7 +13,6 @@
 *.out
 *.nav
 *.snm
-*.txt
 *~
 *#
 .metadata
