@@ -1,0 +1,25 @@
+\begin{frame}{Lemma}
+    $$
+    1 - e^{-\frac{|G|}{|O|}}
+    $$
+    \begin{figure}[H]
+        \begin{tikzpicture}[every node/.style={}]
+            \begin{axis}[
+                    domain=0:1
+                    ,width=8cm
+                    ,ymax=.7
+                    ,xlabel=$\frac{|G|}{|O|}$
+                    % ,xtick distance=0.1
+                    % ,ytick distance=0.1
+                    ,axis lines=left
+                    ,grid=both
+                    ,grid style={
+                            draw=gray!20
+                        }
+                    % ,minor tick num=5
+                ]
+                \addplot[line blue]{1-exp(-(x))};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+\end{frame}
