@@ -1,0 +1,25 @@
+\begin{tikzpicture}[x=2cm]
+
+    \begin{scope}[yshift=.5cm,every node/.append style={rectangle}]
+        \node[](l1) at(0,0){2};
+        \node[](l2) at(0,1){1};
+        \node[](l3) at(0,2){1};
+        \node[](l4) at(0,3){1};
+    \end{scope}
+    
+    \node[](r1) at(2,0){5};
+    \node[](r2) at(2,1){1};
+    \node[](r3) at(2,2){2};
+    \node[](r4) at(2,3){2};
+    \node[](r5) at(2,4){1};
+
+    \foreach \l \r in{
+        1/1%
+        ,2/2,2/3%
+        ,3/3,3/4%
+        ,4/4,4/5%
+    }{
+        \edge{l\l}{r\r};
+    }
+
+\end{tikzpicture}
