@@ -1,8 +1,10 @@
 \begin{frame}{Submodular Functions}
 \begin{align*}
-    & f(A) + f(B) \geq f(A \cup B) + f(A \cap B) 
+    & f(A \cup B) + f(A \cap B) \leq f(A) + f(B)
+    \\
     \\
     & \text{Or}
+    \\
     \\
     \forall A \subseteq B \quad & f(A \cup \{x\}) - f(A) \geq f(B \cup \{x\}) - f(B)
     \\
