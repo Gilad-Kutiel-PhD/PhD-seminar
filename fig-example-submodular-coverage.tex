@@ -28,12 +28,6 @@
         on=<2>{fill=orange}
         ](r6) at(2,6){6};
 
-    \newcommand{\twocolors}[1]{
-        \fill[fill=orange] (#1.west) -- (#1.east) arc(0:180:7.5pt);
-        \fill[fill=blue] (#1.west) -- (#1.east) arc(0:-180:7.5pt);
-        \node at(#1){};
-    }
-
     \onslide<4>{
         \twocolors{r4}
     }
