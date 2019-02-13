@@ -1,56 +1,52 @@
 \begin{tikzpicture}[x=2cm]
 
-    \begin{scope}[yshift=1cm, every node/.append style={rectangle}]
-        \node[](l1) at(0,1){1};
-        \node[fill=blue](l2) at(0,2){2};
-        \node[](l3) at(0,3){3};
-        \node[fill=orange](l4) at(0,4){4};
+    \begin{scope}[yshift=.5cm,every node/.append style={rectangle}]
+        \node[fill=blue](l1) at(0,0){1};
+        \node[](l2) at(0,1){2};
+        \node[fill=orange](l3) at(0,2){3};
     \end{scope}
     
-    \fill[fill=blue] (l3.west) rectangle (l3.south east);
-    \fill[fill=orange] (l3.west) rectangle (l3.north east);
-    \node[rectangle] at(l3){};
+    \fill[fill=blue] (l2.west) rectangle (l2.south east);
+    \fill[fill=orange] (l2.west) rectangle (l2.north east);
+    \node[rectangle] at(l2){};
 
-    \node[](r1) at(2,1){1};
-    \node[](r2) at(2,2){2};
+    % r1
     \node[
-        on=<3>{fill=blue}
-    ](r3) at(2,3){3};
+        on=<2>{fill=blue}
+    ](r1) at(2,0){1};
+
+    % r2
     \node[
-        on=<2>{fill=orange}
-        ,on=<3>{fill=blue}
-        ](r4) at(2,4){4};
+        on=<2>{fill=blue}
+        ,on=<3>{fill=orange}
+    ](r2) at(2,1){2};
+
+    % r3
     \node[
-        on=<2>{fill=orange}
-        ,on=<3>{fill=blue}
-        ](r5) at(2,5){5};
+        on=<2>{fill=blue}
+        ,on=<3>{fill=orange}
+    ](r3) at(2,2){3};
+        
+    % r4
     \node[
-        on=<2>{fill=orange}
-        ](r6) at(2,6){6};
+        on=<3>{fill=orange}
+    ](r4) at(2,3){4};
 
     \onslide<4>{
-        \twocolors{r4}
+        \twocolors{r2}
     }
-        
+
     \onslide<5>{
+        \twocolors{r1}
+        \twocolors{r2}
         \twocolors{r3}
         \twocolors{r4}
-        \twocolors{r5}
-        \twocolors{r6}
     }
 
     \foreach \l \r in{
-        1/1%
-        ,1/2%
-        ,1/3%
-        % 
-        ,2/3%
-        ,2/5%
-        % 
-        ,3/4%
-        % 
-        ,4/5%
-        ,4/6%
+        1/1,1/3%
+        ,2/2%
+        ,3/3,3/4%
     }{
         \edge{l\l}{r\r};
     }
