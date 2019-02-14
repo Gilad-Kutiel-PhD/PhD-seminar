@@ -1,24 +1,29 @@
-\begin{frame}{Lemma}
-    $$
-    1 - e^{-\frac{|G|}{|O|}}
-    $$
+\begin{frame}{Greedy}
+    \begin{lemma}
+        $$
+        1 - e^{-\frac{|G|}{|O|}}
+        $$
+    \end{lemma}
     \begin{figure}[H]
         \begin{tikzpicture}[every node/.style={}]
             \begin{axis}[
                     domain=0:1
-                    ,width=8cm
+                    ,width=6.5cm
                     ,ymax=.7
                     ,xlabel=$\frac{|G|}{|O|}$
-                    % ,xtick distance=0.1
-                    % ,ytick distance=0.1
                     ,axis lines=left
                     ,grid=both
                     ,grid style={
                             draw=gray!20
-                        }
-                    % ,minor tick num=5
+                    }
+                    ,ytick={0.5}
+                    ,extra y ticks={
+                        0.632120558829
+                    }
+                    ,extra y tick labels={$1 - e^{-1}$}
                 ]
                 \addplot[line blue]{1-exp(-(x))};
+                \addplot[thin]{1-exp(-1)};
             \end{axis}
         \end{tikzpicture}
     \end{figure}
