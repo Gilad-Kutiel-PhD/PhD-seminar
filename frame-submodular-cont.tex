@@ -1,3 +1,11 @@
+\newcommand{\group}[3]{
+    \draw[#3, -, name path=#1#2]
+        (#1.west)
+        to[out=90,in=90] (#2.east)
+        to[out=-90,in=-90] (#1.west)
+        ;
+}
+
 \begin{frame}{Submodular cont.}
 \begin{center}
     \begin{tikzpicture}[
@@ -10,14 +18,6 @@
         , x=1.5cm
         , very thick
         ]
-        
-        \def\group#1#2#3{
-        \draw[#3, -, name path=#1#2]
-        (#1.west)
-        to[out=90,in=90] (#2.east)
-        to[out=-90,in=-90] (#1.west)
-        ;
-        }
         
         \onslide<+->
         % GROUP 1 
@@ -127,6 +127,6 @@
         \draw (42) -- (45);
         \draw (31) -- (35);
         
-        \end{tikzpicture}
+    \end{tikzpicture}
 \end{center}
 \end{frame}
