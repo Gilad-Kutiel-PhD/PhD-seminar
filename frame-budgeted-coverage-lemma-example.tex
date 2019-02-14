@@ -1,34 +1,34 @@
-\begin{frame}{Lemma - Example}
-    \begin{tikzpicture}[x=2cm]
-
-        \tikzset{
-            sel/.style={fill=green}
-            ,drop/.style={fill=red}
-        }
-        \begin{scope}[yshift=.5cm,every node/.append style={rectangle}]
-            \node[on=<3->{sel}](l1) at(0,0){1};
-            \node[on=<2->{sel}](l2) at(0,1){1};
-            \node[on=<4->{drop}](l3) at(0,2){3};
-            \node[on=<5->{sel}](l4) at(0,3){1};
-            \node[on=<6->{drop}](l5) at(0,4){2};
-        \end{scope}
+\begin{frame}{$f(G) \geq (1 - e^{-\frac{|G|}{|O|}})f(O)$ - Example}
+    \begin{center}
+        $$\beta = 4$$
+        \begin{tikzpicture}[x=2cm]
+            \tikzset{
+                sel/.style={fill=green}
+                ,drop/.style={fill=red}
+            }
+            \begin{scope}[yshift=.5cm,every node/.append style={rectangle}]
+                \node[on=<3->{sel}](l1) at(0,0){1};
+                \node[on=<2->{sel}](l2) at(0,1){1};
+                \node[](l3) at(0,2){3};
+            \end{scope}
+            
+            \node[on=<3->{sel}](r1) at(2,0){2};
+            \node[on=<2->{sel}](r2) at(2,1){3};
+            \node[](r3) at(2,2){2};
+            \node[](r4) at(2,3){2};
         
-        \node[on=<3->{sel}](r1) at(2,0){3};
-        \node[on=<2->{sel}](r2) at(2,1){2};
-        \node[on=<2->{sel}](r3) at(2,2){4};
-        \node[](r4) at(2,3){5};
-        \node[on=<5->{sel}](r5) at(2,4){2};
-        \node[](r6) at(2,5){1};
-    
-        \foreach \l \r in{
-            1/1,1/2%
-            ,2/2,2/3%
-            ,3/3,3/4,3/5%
-            ,4/5%
-            ,5/5,5/6%
-        }{
-            \edge{l\l}{r\r};
-        }
-    
-    \end{tikzpicture}    
+            \foreach \l \r in{
+                1/1%
+                ,2/2%
+                ,3/2,3/3,3/4%
+            }{
+                \edge{l\l}{r\r};
+            }
+            \onslide<4>{
+                \draw[decorate,decoration={brace,amplitude=10pt}]
+                ([xshift=-2mm]l1.south west) -- ([xshift=-2mm]l2.north west)
+                node[midway, draw=none, left=5mm]{$\geq (1 - e^{-\frac{1}{2}})f(O)$};
+            }
+        \end{tikzpicture}    
+    \end{center}
 \end{frame}
