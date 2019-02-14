@@ -1,0 +1,22 @@
+\begin{frame}{Greedy Worth Case}
+    \begin{center}
+        
+        $$\beta = k$$
+        \begin{tikzpicture}[x=2cm]
+        \begin{scope}[every node/.append style={rectangle}]
+            \node[](l1) at(0,1){1};
+            \node[](l2) at(0,2){k};
+        \end{scope}
+        
+        \node[](r1) at(2,1){2};
+        \node[](r2) at(2,2){k};
+        
+        \foreach \l \r in{
+            1/1,2/2%
+        }{
+            \edge{l\l}{r\r};
+        }
+                
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
