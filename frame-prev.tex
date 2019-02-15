@@ -16,39 +16,6 @@
     \draw (6,-5pt) -- (6,1.1) node[anchor=south]{Ratio};
     \draw (5,0) -- (18,0) node[anchor=west]{Year};
     
-    \begin{filecontents}{data-upper.txt}
-    7   0.996153846
-    8   0.95
-    8.8 0.91
-    \end{filecontents}
-    
-    \begin{filecontents}{data-unweight.txt}
-    7   0.6
-    8   0.71
-    9   0.804
-    \end{filecontents}
-    
-    \begin{filecontents}{data-weight-vertex.txt}
-    8   0.64
-    \end{filecontents}
-    
-    \begin{filecontents}{data-weight-edge.txt}
-    7   0.5
-    \end{filecontents}
-    
-    \begin{filecontents}{data-unweight-cp.txt}
-    16   0.5
-    \end{filecontents}
-    
-    \begin{filecontents}{data-cp.txt}
-    16   0.33
-    17   0.5
-    \end{filecontents}
-    
-    \begin{filecontents}{data-fixed-cp.txt}
-    17   0.75
-    \end{filecontents}
-    
     \tikzset{upper/.style={mark=*, mark options={fill=red}}}
     \tikzset{unweight/.style={mark=triangle*, mark options={fill=blue}}}
     \tikzset{weight-vertex/.style={mark=square*, mark options={fill=cyan}}}
@@ -57,13 +24,38 @@
     \tikzset{cp/.style={mark=pentagon*, mark options={fill=purple}}}
     \tikzset{fixed-cp/.style={mark=otimes*, mark options={fill=magenta}}}
     
-    \draw plot[upper] file {data-upper.txt};
-    \draw plot[unweight] file {data-unweight.txt};
-    \draw plot[weight-vertex] file {data-weight-vertex.txt}; 
-    \draw plot[weight-edge] file {data-weight-edge.txt};
-    \draw plot[unweight-cp] file {data-unweight-cp.txt};
-    \draw plot[cp] file {data-cp.txt};
-    \draw plot[fixed-cp] file {data-fixed-cp.txt};
+    \draw plot[upper] coordinates {
+        (7,0.996153846)
+        (8,0.95)
+        (8.8,0.91)
+    };
+
+    \draw plot[unweight] coordinates {
+        (7,0.6)
+        (8,0.71)
+        (9,0.804)
+    };
+
+    \draw plot[weight-vertex] coordinates {
+        (8,0.64)
+    }; 
+
+    \draw plot[weight-edge] coordinates {
+        (7,0.5)
+    };
+
+    \draw plot[unweight-cp] coordinates {
+        (16,0.5)        
+    };
+
+    \draw plot[cp] coordinates {
+        (16,0.33)
+        (17,0.5)
+    };
+
+    \draw plot[fixed-cp] coordinates {
+        (17,0.75)
+    };
     
     \begin{scope}[xshift=15mm, yshift=7mm]
     \draw 
