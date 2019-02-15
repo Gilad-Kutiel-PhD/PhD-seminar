@@ -1,32 +1,23 @@
 \begin{frame}{Bucket Algorithm}
 \begin{center}
-\begin{tikzpicture}[every node/.style={}]
-\begin{axis}[
-    axis lines=left
-    ,ticks=none
-    ,ymin=0
-    ,ymax=10
-    ,xmin=0
-    ,xmax=10
-    ,xlabel={Cost}
-    ,ylabel={Profit}
-    ]
-    \addplot[
-        ,only marks
-        ,every mark/.style={draw=white, fill=black}
-    ] coordinates {
-        (1,2) (1,4) 
-        (2,3) (2,6)
-        (3,5) (3,7)
-        (4,3) (4,6) (4,8)
-        (5,7) (5,8) (5,10)
-        (6,2) (6,5) (6,7) (6,9)
-        (7,3) (7,9)
-        (8,5) (8,10)
-        (9,2) (9,4) (9,7) (9,8)
-    };
-        
-\end{axis}
+\begin{tikzpicture}[every node/.style={}, x=8mm, y=5mm]
+    
+    \draw[->] (0,0) -- (10,0) node[midway, below]{Cost};
+    \draw[->] (0,0) -- (0,10) node[midway, above, sloped]{Profit};
+    
+    \foreach \x \y in {
+        1/2,1/4
+        ,2/3,2/6
+        ,3/5,3/7
+        ,4/3,4/6,4/8
+        ,5/7,5/8,5/10
+        ,6/2,6/5,6/7,6/9
+        ,7/3,7/9
+        ,8/5,8/10
+        ,9/2,9/4,9/7,9/8
+    }{
+        \node[circle, inner sep=1pt, fill=black] at(\x,\y){};
+    }
 \end{tikzpicture}
 \end{center}
 \end{frame}
