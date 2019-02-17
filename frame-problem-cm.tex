@@ -1,4 +1,4 @@
-\begin{frame}{Maximum Carpool Matching (MCM)}
+\begin{frame}{Maximum Carpool Matching}
 \begin{center}
     \begin{tikzpicture}[x=2cm,y=1.5cm, ->]
         \foreach[count=\i] \a \r \c \p in{
@@ -18,6 +18,7 @@
             \node[draw=none, inner sep=1mm](\i) at(\a:\r) {\c~\p};
         }
     
+        \pause
         \foreach \u \w \v in{
             1/2/5%
             ,8/5/7%
@@ -26,7 +27,7 @@
             ,11/4/5%
             ,12/3/6%
         }{
-            \edgeWithLabel[bend left, on=<2>{orange}]{\u}{\w}{\v}
+            \edgeWithLabel[bend left, on=<3>{orange}]{\u}{\w}{\v}
         }
     
         \foreach \u \w \v in{
@@ -39,7 +40,7 @@
             ,7/4/1,7/3/8%
             ,8/5/3%
         }{
-            \edgeWithLabel[bend left, on=<2>{blur}]{\u}{\w}{\v}
+            \edgeWithLabel[bend left, on=<3>{blur}]{\u}{\w}{\v}
         }
     
     \end{tikzpicture}
