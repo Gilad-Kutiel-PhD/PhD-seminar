@@ -4,16 +4,17 @@
     \begin{tikzpicture}[thick, black!60]
 
         \node(1) at(0:2) {};
-        \node[fill=orange](2) at(120:2) {};
-        \node[fill=blue](3) at(240:2) {};
+        \node[on=<2>{fill=orange}](2) at(120:2) {};
+        \node[on=<2>{fill=blue}](3) at(240:2) {};
     
+        \draw[on=<4>{very thick, blue}] (1) -- (2) coordinate[midway](12);
+        \draw[on=<3>{very thick, orange},on=<4>{very thick, blue}] (2) -- (3);
+        \draw[on=<3>{very thick, orange}] (3) -- (1) coordinate[midway](13);
+
+        \pause
         \twocolors{1}
     
-        \draw[on=<3>{very thick, blue}] (1) -- (2) coordinate[midway](12);
-        \draw[on=<2>{very thick, orange},on=<3>{very thick, blue}] (2) -- (3);
-        \draw[on=<2>{very thick, orange}] (3) -- (1) coordinate[midway](13);
-    
-        \onslide<4>{
+        \onslide<5>{
             \draw[very thick, orange](1) -- (12);
             \draw[very thick, blue](12) -- (2);
             \draw[very thick, orange](1) -- (13);
