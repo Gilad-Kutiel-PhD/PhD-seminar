@@ -4,18 +4,18 @@
         \begin{tikzpicture}[x=2cm]
 
             \begin{scope}[yshift=.5cm,every node/.append style={rectangle}]
-                \node[on=<2>{fill=blue}](l1) at(0,0){};
+                \node[on=<2->{fill=blue}](l1) at(0,0){};
                 \node[](l2) at(0,1){};
-                \node[on=<2>{fill=orange}](l3) at(0,2){};
+                \node[on=<2->{fill=orange}](l3) at(0,2){};
             \end{scope}
             
-            \fill[on=<2>{fill=blue}] (l2.west) rectangle (l2.south east);
-            \fill[on=<2>{fill=orange}] (l2.west) rectangle (l2.north east);
+            \fill[fill=white, on=<2->{fill=blue}] (l2.west) rectangle (l2.south east);
+            \fill[fill=white, on=<2->{fill=orange}] (l2.west) rectangle (l2.north east);
             \node[rectangle] at(l2){};
         
             \node[on=<3>{fill=blue}](r1) at(2,0){};
-            \node[on=<3>{fill=blue},on=<3>{fill=orange}](r2) at(2,1){};
-            \node[on=<3>{fill=blue},on=<3>{fill=orange}](r3) at(2,2){};
+            \node[on=<3>{fill=blue},on=<4>{fill=orange}](r2) at(2,1){};
+            \node[on=<3>{fill=blue},on=<4>{fill=orange}](r3) at(2,2){};
             \node[on=<4>{fill=orange}](r4) at(2,3){};
         
             \onslide<5>{
