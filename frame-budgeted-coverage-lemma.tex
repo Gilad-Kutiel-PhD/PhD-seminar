@@ -23,6 +23,10 @@
             ,ylabel=Approximation Ratio
             ,axis lines=left
         ]
+            \addplot[black, dotted, thin]{
+                1 - exp(-1)
+            };
+
             \addplot[orange]{
                 1 - exp(-x)
             };

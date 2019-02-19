@@ -1,10 +1,6 @@
-\begin{frame}{Bucket Algorithm - Analysis}
-    \def\pLarge{P_{\text{large}}}
-
+\begin{frame}{Bucket Algorithm - cont.}
     \begin{columns}
-    
-        \begin{column}{0.55\textwidth}
-            
+        \begin{column}{0.7\textwidth}
             \begin{tikzpicture}[every node/.style={}]
                 \begin{axis}[
                     ,width=.9\textwidth
@@ -33,23 +29,17 @@
                     };
                 \end{axis}
             \end{tikzpicture}
-
         \end{column}
-
-        \begin{column}{0.4\textwidth}
-            \begin{itemize}[]
-                \pause
-                \item $\frac{f(\pLarge)}{f(O \setminus \pLarge)} \approx 0 $ \pause \faThumbsOUp
-                \pause
-                \item $\frac{f(\pLarge)}{f(O \setminus \pLarge)} \approx 1 $ \pause \faThumbsOUp
-            \end{itemize}
+        \begin{column}{0.3\textwidth}
+            \onslide<2->{
+                $\frac{f(P)}{f(O \setminus P)} \leq$ \pause \faThumbsOUp
+            }
         \end{column}
-
-
     \end{columns}
-    \pause
-    \begin{theorem}
-        Bucket Algorithm is a $(1 - e^{-\frac{2}{3}})$-approximation algorithm.
-    \end{theorem}
-
+    \onslide<3>{
+        \begin{theorem}
+            Bucket Algorithm is a $(1 - e^{-\frac{2}{3}})$-approximation algorithm.
+        \end{theorem}
+    }
+        
 \end{frame}
